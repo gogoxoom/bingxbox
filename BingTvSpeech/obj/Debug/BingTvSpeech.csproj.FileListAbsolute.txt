@@ -10,3 +10,5 @@ C:\Users\jesse\Dropbox\forPella\BingSpeechCmds\BingTvSpeech\BingTvSpeech\obj\Deb
 C:\Users\jesse\Dropbox\forPella\BingSpeechCmds\BingTvSpeech\BingTvSpeech\obj\Debug\BingTvSpeech.pdb
 C:\Users\jesse\Dropbox\forPella\BingSpeechCmds\BingTvSpeech\BingTvSpeech\bin\Debug\SpeechRek.dll
 C:\Users\jesse\Dropbox\forPella\BingSpeechCmds\BingTvSpeech\BingTvSpeech\bin\Debug\SpeechRek.pdb
+C:\Users\jesse\Dropbox\console-switch-task\Console Task Switch App\bingxbox\BingTvSpeech\BingTvSpeech\obj\Debug\BingTvSpeech.exe
+C:\Users\jesse\Dropbox\console-switch-task\Console Task Switch App\bingxbox\BingTvSpeech\BingTvSpeech\obj\Debug\BingTvSpeech.pdb

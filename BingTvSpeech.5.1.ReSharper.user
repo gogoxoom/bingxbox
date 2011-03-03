@@ -12,14 +12,17 @@
       <Item value="bool" priority="0" />
       <Item value="EasingFunctionBase`0" priority="0" />
       <Item value="void" priority="0" />
-      <Item value="speechRek" priority="1" />
+      <Item value="speechRek" priority="2" />
       <Item value="if" priority="0" />
       <Item value="string" priority="0" />
       <Item value="words" priority="0" />
+      <Item value="Box5" priority="0" />
+      <Item value="Visibility`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:SpeechRek.SpeechRek">
       <Item value="SetWords`0" priority="0" />
       <Item value="OnWordHeard" priority="0" />
+      <Item value="OnSpeechHeard" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:BingTvSpeech.MainWindow">
       <Item value="OnActivated`0" priority="1" />
@@ -27,43 +30,50 @@
     <ItemStatistics item="Qualified:System.Windows.Controls.TextBlock">
       <Item value="Text" priority="0" />
     </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Shapes.Rectangle">
+      <Item value="Visibility" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Visibility">
+      <Item value="Visible" priority="0" />
+      <Item value="Collapsed" priority="0" />
+    </ItemStatistics>
   </CompletionStatisticsManager>
   <RecentFiles>
     <RecentFiles>
       <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml" caret="17757" fromTop="8" />
-      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="3712" fromTop="19" />
+      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="368" fromTop="13" />
     </RecentFiles>
     <RecentEdits>
-      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml" caret="420" fromTop="8" />
-      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="1774" fromTop="24" />
-      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="7598" fromTop="23" />
       <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="724" fromTop="10" />
-      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="7290" fromTop="15" />
       <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml" caret="19863" fromTop="9" />
-      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="6313" fromTop="40" />
-      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="6400" fromTop="25" />
-      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="5595" fromTop="7" />
-      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="5859" fromTop="13" />
-      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="6126" fromTop="19" />
-      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="6651" fromTop="31" />
-      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="6915" fromTop="37" />
-      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="5373" fromTop="18" />
-      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="5154" fromTop="12" />
-      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="4924" fromTop="6" />
-      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="4158" fromTop="13" />
+      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="6311" fromTop="40" />
+      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="6398" fromTop="25" />
+      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="5593" fromTop="7" />
+      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="5857" fromTop="13" />
+      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="6124" fromTop="19" />
+      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="6649" fromTop="31" />
+      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="6913" fromTop="37" />
+      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="5371" fromTop="18" />
+      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="5152" fromTop="12" />
+      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="4922" fromTop="6" />
+      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="4156" fromTop="13" />
       <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml" caret="16571" fromTop="12" />
       <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml" caret="18565" fromTop="7" />
-      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="2603" fromTop="12" />
-      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="2765" fromTop="18" />
-      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="2929" fromTop="24" />
-      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="3092" fromTop="30" />
-      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="3295" fromTop="36" />
+      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="2601" fromTop="12" />
+      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="2763" fromTop="18" />
+      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="2927" fromTop="24" />
+      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="3090" fromTop="30" />
+      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="3293" fromTop="36" />
       <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml" caret="16130" fromTop="8" />
       <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="1196" fromTop="39" />
       <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml" caret="20687" fromTop="7" />
       <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml" caret="17757" fromTop="8" />
-      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="3372" fromTop="27" />
-      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="3712" fromTop="19" />
+      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="3370" fromTop="27" />
+      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="3710" fromTop="19" />
+      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="7211" fromTop="14" />
+      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="7676" fromTop="24" />
+      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="7828" fromTop="28" />
+      <File id="54175706-7C06-4386-B392-E010752880B5/f:MainWindow.xaml.cs" caret="1802" fromTop="25" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>

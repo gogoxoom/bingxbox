@@ -58,7 +58,6 @@ namespace BingTvSpeech
 			selectedTab = homeTab;
 			selectedBox.Style = highlightStyle;
 			selectedTab.Style = highlightText;
-
         }
 
         void sp_OnWordHeard(object sender, SpeechHeardArgs e) {
@@ -223,19 +222,21 @@ namespace BingTvSpeech
 
         }
 
-        private void SetUpSpeech()
-        {
-            if (speechRek == null)
-            {
+        private void SetUpSpeech() {
+            if (speechRek == null) {
                 speechRek = new SpeechRek.SpeechRek();
                 speechRek.OnWordHeard += new WordHeardEventHandler(sp_OnWordHeard);
+                speechRek.OnSpeechHeard += new SpeechHeardEventHandler(speechRek_OnSpeechHeard);
                 speechRek.SetWords(words);
                 speechRek.ActivateMultiple();
             }
         }
 
-        private void Window_Activated(object sender, EventArgs e)
-        {
+        void speechRek_OnSpeechHeard(object sender, EventArgs e) {
+            //Box5.Visibility = System.Windows.Visibility.Collapsed;
+        }
+
+        private void Window_Activated(object sender, EventArgs e) {
             SetUpSpeech();
         }
 

@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ExpressionBlendVersion>4.0.20525.0</ExpressionBlendVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{54175706-7c06-4386-b392-e010752880b5}</ProjectGuid>
+    <ProjectGuid>{54175706-7C06-4386-B392-E010752880B5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <DefaultClrNameSpace>BingTvSpeech</DefaultClrNameSpace>
@@ -37,8 +37,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SpeechRek, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\..\JohnsSpeechthing\SpeechRek.dll</HintPath>
+    <Reference Include="SpeechRek, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SpeechRek.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
