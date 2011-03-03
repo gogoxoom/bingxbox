@@ -1,0 +1,326 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="BingTvSpeech.MainWindow"
+	x:Name="Window"
+	Title="MainWindow"
+	Width="1280" Height="720"
+    Activated="Window_Activated">
+	<Window.Resources>
+		<Style x:Key="RectangleStyle1" TargetType="{x:Type Rectangle}">
+			<Setter Property="Fill">
+				<Setter.Value>
+					<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+						<GradientStop Color="#FFC6C4C4" Offset="0"/>
+						<GradientStop Color="White" Offset="1"/>
+					</LinearGradientBrush>
+				</Setter.Value>
+			</Setter>
+			<Setter Property="Stroke" Value="#FF53BEEB"/>
+			<Setter Property="StrokeThickness" Value="5"/>
+		</Style>
+		<Storyboard x:Key="TextScrollAnim">
+			<PointAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransformOrigin)" Storyboard.TargetName="txtScroller">
+				<EasingPointKeyFrame KeyTime="0" Value="-0.003,0.484">
+					<EasingPointKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseIn"/>
+					</EasingPointKeyFrame.EasingFunction>
+				</EasingPointKeyFrame>
+				<EasingPointKeyFrame KeyTime="0:0:0.4" Value="-0.003,0.484"/>
+			</PointAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="txtScroller">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseIn"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1.5"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="txtScroller">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseIn"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1.5"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="itmScroller">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseIn"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0.704"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="itmScroller">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseIn"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0.704"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="itmScroller">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseIn"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-36.75"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="txtScroller">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseIn"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="15"/>
+			</DoubleAnimationUsingKeyFrames>
+			<PointAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransformOrigin)" Storyboard.TargetName="itmScroller">
+				<EasingPointKeyFrame KeyTime="0" Value="0,0.5">
+					<EasingPointKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseIn"/>
+					</EasingPointKeyFrame.EasingFunction>
+				</EasingPointKeyFrame>
+				<EasingPointKeyFrame KeyTime="0:0:0.4" Value="0,0.5"/>
+			</PointAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="ItemScrollAnim">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="itmScroller">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0.704">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseIn"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="itmScroller">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0.704">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseIn"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="itmScroller">
+				<EasingDoubleKeyFrame KeyTime="0" Value="-35.542">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseIn"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<PointAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransformOrigin)" Storyboard.TargetName="txtScroller">
+				<EasingPointKeyFrame KeyTime="0" Value="-0.003,0.484">
+					<EasingPointKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseIn"/>
+					</EasingPointKeyFrame.EasingFunction>
+				</EasingPointKeyFrame>
+				<EasingPointKeyFrame KeyTime="0:0:0.4" Value="-0.003,0.484"/>
+			</PointAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="txtScroller">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.5">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseIn"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="txtScroller">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.5">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseIn"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="txtScroller">
+				<EasingDoubleKeyFrame KeyTime="0" Value="15">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseIn"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<PointAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransformOrigin)" Storyboard.TargetName="itmScroller">
+				<EasingPointKeyFrame KeyTime="0" Value="0,0.5">
+					<EasingPointKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseIn"/>
+					</EasingPointKeyFrame.EasingFunction>
+				</EasingPointKeyFrame>
+				<EasingPointKeyFrame KeyTime="0:0:0.4" Value="-0.004,0.491"/>
+			</PointAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="TextScrollLeft">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="txtScroller">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseIn"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-1534"/>
+			</DoubleAnimationUsingKeyFrames>
+			<PointAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransformOrigin)" Storyboard.TargetName="txtScroller">
+				<EasingPointKeyFrame KeyTime="0" Value="-0.003,0.484">
+					<EasingPointKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseIn"/>
+					</EasingPointKeyFrame.EasingFunction>
+				</EasingPointKeyFrame>
+			</PointAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="txtScroller">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.5">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseIn"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="txtScroller">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.5">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseIn"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="txtScroller">
+				<EasingDoubleKeyFrame KeyTime="0" Value="15">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseIn"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="TextScrollRight">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="txtScroller">
+				<EasingDoubleKeyFrame KeyTime="0" Value="-1534">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseIn"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="txtScroller">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.5">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseIn"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="txtScroller">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.5">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseIn"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<PointAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransformOrigin)" Storyboard.TargetName="txtScroller">
+				<EasingPointKeyFrame KeyTime="0" Value="0,0.5">
+					<EasingPointKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseIn"/>
+					</EasingPointKeyFrame.EasingFunction>
+				</EasingPointKeyFrame>
+				<EasingPointKeyFrame KeyTime="0:0:0.4" Value="0,0.5"/>
+			</PointAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="GridScrollLeft">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="itmScroller">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseIn"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-606"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="GridScrollRight">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="itmScroller">
+				<EasingDoubleKeyFrame KeyTime="0" Value="-606">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseIn"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Style x:Key="highlightText" TargetType="{x:Type TextBlock}">
+			<Setter Property="TextWrapping" Value="NoWrap"/>
+			<Setter Property="TextTrimming" Value="None"/>
+			<Setter Property="FontWeight" Value="Bold"/>
+			<Setter Property="FontSize" Value="26.667"/>
+		</Style>
+
+	</Window.Resources>
+	<Window.Triggers>
+		<EventTrigger RoutedEvent="FrameworkElement.Loaded">
+			<BeginStoryboard Storyboard="{StaticResource TextScrollAnim}"/>
+			<!--BeginStoryboard Storyboard="{StaticResource GridScrollLeft}"/>
+			<BeginStoryboard Storyboard="{StaticResource GridScrollRight}"/>
+			<BeginStoryboard Storyboard="{StaticResource TextScrollLeft}"/>
+			<BeginStoryboard Storyboard="{StaticResource TextScrollRight}"/>
+			<BeginStoryboard Storyboard="{StaticResource ItemScrollAnim}"/-->
+		</EventTrigger>
+	</Window.Triggers>
+
+	<Grid x:Name="LayoutRoot" Height="720" Margin="0,0,-8,-38">
+		<!--Grid Margin="0,0,0,39">
+        	<Button Content="Add Word" Height="23" HorizontalAlignment="Left" Margin="339,8,0,0" Name="buttonAdd" VerticalAlignment="Top" Width="69" Click="ButtonAddWord_Click" />
+        	<ListBox Margin="77,0,0,8" Name="listBoxOutput" AlternationCount="4" VerticalContentAlignment="Bottom" Height="78" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="331" />
+        	<Label Content="Label" Height="28" Margin="31.5,0,0,63" Name="label1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="46.5" />
+        	<TextBox Height="23" HorizontalAlignment="Left" Margin="77,9,0,0" Name="textBoxWord" VerticalAlignment="Top" Width="241" AcceptsReturn="False" KeyUp="textBoxWord_KeyUp" />
+    	</Grid-->
+		<Canvas x:Name="itmScroller" Margin="75,132,-575,137" RenderTransformOrigin="0.5,0.5">
+			<Canvas.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform/>
+					<SkewTransform/>
+					<RotateTransform/>
+					<TranslateTransform/>
+				</TransformGroup>
+			</Canvas.RenderTransform>
+            
+			<Rectangle Name="bigBox" Fill="Gainsboro" Height="451" Stroke="Black" Width="458"/>
+            <TextBlock x:Name="bigModText" TextWrapping="Wrap" Text="Home Feature" Canvas.Top="25" Height="51" Width="186" FontSize="24" Canvas.Left="22"/>
+            <Rectangle Name="Box1" Fill="#FFC1C1C2" Height="213.076" Stroke="Black" Width="224" Canvas.Left="487.5"/>
+            <TextBlock TextWrapping="Wrap" Text="Item one" Canvas.Top="91" Height="123" Width="222" FontSize="32" Canvas.Left="488" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <Rectangle Name="Box2" Fill="#FFC1C1C2" Height="214.576" Stroke="Black" Width="224" Canvas.Left="487.5" Canvas.Top="236.424"/>
+            
+            <Rectangle Name="Box3" Fill="#FFC1C1C2" Height="213.076" Stroke="Black" Width="224" Canvas.Left="747"/>
+            
+            <Rectangle Name="Box4" Fill="#FFC1C1C2" Height="214.576" Stroke="Black" Width="224" Canvas.Left="747" Canvas.Top="236.424"/>
+            <Rectangle Name="Box5" Fill="#FFC1C1C2" Height="213.076" Stroke="Black" Width="224" Canvas.Left="1006.5"/>
+            <Rectangle Name="Box6" Fill="#FFC1C1C2" Height="214.576" Stroke="Black" Width="224" Canvas.Left="1006.5" Canvas.Top="236.424"/>
+            <Rectangle Name="Box7" Fill="#FFC1C1C2" Height="213.076" Stroke="Black" Width="224" Canvas.Left="1257"/>
+            <Rectangle Name="Box8" Fill="#FFC1C1C2" Height="214.576" Stroke="Black" Width="224" Canvas.Left="1257" Canvas.Top="236.424"/>
+            <Rectangle Name="Box9" Fill="#FFC1C1C2" Height="97.576" Stroke="Black" Width="224" Canvas.Left="1512"/>
+            <Rectangle Fill="#FFC1C1C2" Height="88.576" Stroke="Black" Width="224" Canvas.Left="1512" Canvas.Top="124.5"/>
+            <TextBlock TextWrapping="Wrap" Text="Item three" Canvas.Top="89" Height="123" Width="222" FontSize="32" Canvas.Left="745" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <TextBlock TextWrapping="Wrap" Text="Item with a long name" Canvas.Top="328" Height="123" Width="222" FontSize="32" Canvas.Left="1007" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <TextBlock TextWrapping="Wrap" Text="Item two" Canvas.Top="328" Height="123" Width="222" FontSize="32" Canvas.Left="487" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <TextBlock TextWrapping="Wrap" Text="Item four" Canvas.Top="327" Height="123" Width="222" FontSize="32" Canvas.Left="748" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <TextBlock TextWrapping="Wrap" Text="Item five" Canvas.Top="91" Height="123" Width="222" FontSize="32" Canvas.Left="1006" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" />
+		</Canvas>
+		<Canvas x:Name="txtScroller" Height="61" Margin="76.5,53,-576.5,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+			<Canvas.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform/>
+					<SkewTransform/>
+					<RotateTransform/>
+					<TranslateTransform/>
+				</TransformGroup>
+			</Canvas.RenderTransform>
+			<TextBlock x:Name="homeTab" TextWrapping="Wrap" Text="Home" Canvas.Top="8" Height="45" Width="105.642" FontSize="24" Style="{DynamicResource highlightText}"/>
+			<TextBlock x:Name="weatherTab" TextWrapping="Wrap" Text="Weather" Canvas.Top="8" Height="45" Width="105.642" FontSize="24" Canvas.Left="154.5"/>
+			<TextBlock x:Name="moviesTab" TextWrapping="Wrap" Text="Movies" Canvas.Top="8" Height="45" Width="105.642" FontSize="24" Canvas.Left="321"/>
+            <TextBlock x:Name="tvTab" TextWrapping="Wrap" Text="TV" Canvas.Top="8" Height="45" Width="39.642" FontSize="24" Canvas.Left="475.5"/>
+            <TextBlock x:Name="financeTab" TextWrapping="Wrap" Text="Finance" Canvas.Top="8" Height="45" Width="105.642" FontSize="24" Canvas.Left="580.5"/>
+            <TextBlock x:Name="travelTab" TextWrapping="Wrap" Text="Travel" Canvas.Top="8" Height="45" Width="105.642" FontSize="24" Canvas.Left="723"/>
+            <TextBlock x:Name="musicTab" TextWrapping="Wrap" Text="Music" Canvas.Top="8" Height="45" Width="105.642" FontSize="24" Canvas.Left="864"/>
+            <TextBlock x:Name="newsTab" TextWrapping="Wrap" Text="News" Canvas.Top="8" Height="45" Width="105.642" FontSize="24" Canvas.Left="1003.5"/>
+            <TextBlock x:Name="sportsTab" TextWrapping="Wrap" Text="Sports" Canvas.Top="8" Height="45" Width="105.642" FontSize="24" Canvas.Left="1143"/>
+			<TextBlock TextWrapping="Wrap" Text="Tab 1" Canvas.Top="8" Height="45" Width="105.642" FontSize="24" Canvas.Left="1251"/>
+			<TextBlock TextWrapping="Wrap" Text="Tab 2" Canvas.Top="8" Height="45" Width="105.642" FontSize="24" Canvas.Left="1383"/>
+			<TextBlock TextWrapping="Wrap" Text="Tab 3" Canvas.Top="8" Height="45" Width="105.642" FontSize="24" Canvas.Left="1521"/>
+		</Canvas>
+        <TextBlock TextWrapping="Wrap" Text="home  .  weather  .  movies  .  scroll right  .  scroll left  .  select tabs  .  select grid  .  tv  .  finance  .  travel  .  music  .  news  .  sports  .  clear  .  item one  .  item two  .  item three  .  item four  .  item five  .  item with a long name  .  big item" Canvas.Top="91" Height="48" Width="1266" FontSize="11" Canvas.Left="1006" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,672" Foreground="#FF7F7F7F" />
+	</Grid>
+</Window>

@@ -1,0 +1,12 @@
+C:\Users\jesse\Dropbox\forPella\BingSpeechCmds\BingTvSpeech\BingTvSpeech\bin\Debug\BingTvSpeech.exe
+C:\Users\jesse\Dropbox\forPella\BingSpeechCmds\BingTvSpeech\BingTvSpeech\bin\Debug\BingTvSpeech.pdb
+C:\Users\jesse\Dropbox\forPella\BingSpeechCmds\BingTvSpeech\BingTvSpeech\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\jesse\Dropbox\forPella\BingSpeechCmds\BingTvSpeech\BingTvSpeech\obj\Debug\MainWindow.baml
+C:\Users\jesse\Dropbox\forPella\BingSpeechCmds\BingTvSpeech\BingTvSpeech\obj\Debug\MainWindow.g.cs
+C:\Users\jesse\Dropbox\forPella\BingSpeechCmds\BingTvSpeech\BingTvSpeech\obj\Debug\App.g.cs
+C:\Users\jesse\Dropbox\forPella\BingSpeechCmds\BingTvSpeech\BingTvSpeech\obj\Debug\BingTvSpeech_MarkupCompile.cache
+C:\Users\jesse\Dropbox\forPella\BingSpeechCmds\BingTvSpeech\BingTvSpeech\obj\Debug\BingTvSpeech.g.resources
+C:\Users\jesse\Dropbox\forPella\BingSpeechCmds\BingTvSpeech\BingTvSpeech\obj\Debug\BingTvSpeech.exe
+C:\Users\jesse\Dropbox\forPella\BingSpeechCmds\BingTvSpeech\BingTvSpeech\obj\Debug\BingTvSpeech.pdb
+C:\Users\jesse\Dropbox\forPella\BingSpeechCmds\BingTvSpeech\BingTvSpeech\bin\Debug\SpeechRek.dll
+C:\Users\jesse\Dropbox\forPella\BingSpeechCmds\BingTvSpeech\BingTvSpeech\bin\Debug\SpeechRek.pdb
